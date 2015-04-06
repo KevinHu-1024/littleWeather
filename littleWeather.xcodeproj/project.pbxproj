@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		04368C021ACA05CA00186214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04368C011ACA05CA00186214 /* AppDelegate.swift */; };
-		04368C041ACA05CA00186214 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04368C031ACA05CA00186214 /* RootViewController.swift */; };
-		04368C061ACA05CA00186214 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04368C051ACA05CA00186214 /* DataViewController.swift */; };
-		04368C081ACA05CA00186214 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04368C071ACA05CA00186214 /* ModelController.swift */; };
 		04368C0B1ACA05CA00186214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04368C091ACA05CA00186214 /* Main.storyboard */; };
 		04368C0D1ACA05CA00186214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04368C0C1ACA05CA00186214 /* Images.xcassets */; };
 		04368C101ACA05CA00186214 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04368C0E1ACA05CA00186214 /* LaunchScreen.xib */; };
 		04368C1C1ACA05CA00186214 /* littleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04368C1B1ACA05CA00186214 /* littleWeatherTests.swift */; };
-		045AD76E1ACA0A5A00EA2E20 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD76D1ACA0A5A00EA2E20 /* MainTableViewCell.swift */; };
+		045AD7721AD274C200EA2E20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7711AD274C200EA2E20 /* MainViewController.swift */; };
+		045AD7741AD274D500EA2E20 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7731AD274D500EA2E20 /* MainTableViewCell.swift */; };
+		045AD7761AD2750500EA2E20 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7751AD2750500EA2E20 /* LocationService.swift */; };
+		045AD7781AD2752700EA2E20 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7771AD2752700EA2E20 /* WeatherService.swift */; };
+		16A9BCE434D0D36535783B6B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8A60BA18E9F50FFD9AD887 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,16 +33,19 @@
 		04368BFC1ACA05CA00186214 /* littleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = littleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04368C001ACA05CA00186214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04368C011ACA05CA00186214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04368C031ACA05CA00186214 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		04368C051ACA05CA00186214 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		04368C071ACA05CA00186214 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		04368C0A1ACA05CA00186214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04368C0C1ACA05CA00186214 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04368C0F1ACA05CA00186214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		04368C151ACA05CA00186214 /* littleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = littleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04368C1A1ACA05CA00186214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04368C1B1ACA05CA00186214 /* littleWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = littleWeatherTests.swift; sourceTree = "<group>"; };
-		045AD76D1ACA0A5A00EA2E20 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		045AD7711AD274C200EA2E20 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		045AD7731AD274D500EA2E20 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		045AD7751AD2750500EA2E20 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		045AD7771AD2752700EA2E20 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		35DC6F3C6FF7632AF8BA0E8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4B8A60BA18E9F50FFD9AD887 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FBDC1C82974AEC2CF730BEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A9BCE434D0D36535783B6B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 				04368BFE1ACA05CA00186214 /* littleWeather */,
 				04368C181ACA05CA00186214 /* littleWeatherTests */,
 				04368BFD1ACA05CA00186214 /* Products */,
+				EE38A1FF7781BA09D5A5E850 /* Pods */,
+				3FB85D6A252D6263AEBE284E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,14 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				04368C011ACA05CA00186214 /* AppDelegate.swift */,
-				04368C031ACA05CA00186214 /* RootViewController.swift */,
-				04368C051ACA05CA00186214 /* DataViewController.swift */,
-				04368C071ACA05CA00186214 /* ModelController.swift */,
+				045AD7711AD274C200EA2E20 /* MainViewController.swift */,
+				045AD7731AD274D500EA2E20 /* MainTableViewCell.swift */,
+				045AD7751AD2750500EA2E20 /* LocationService.swift */,
+				045AD7771AD2752700EA2E20 /* WeatherService.swift */,
 				04368C091ACA05CA00186214 /* Main.storyboard */,
-				04368C0C1ACA05CA00186214 /* Images.xcassets */,
 				04368C0E1ACA05CA00186214 /* LaunchScreen.xib */,
+				04368C0C1ACA05CA00186214 /* Images.xcassets */,
 				04368BFF1ACA05CA00186214 /* Supporting Files */,
-				045AD76D1ACA0A5A00EA2E20 /* MainTableViewCell.swift */,
 			);
 			path = littleWeather;
 			sourceTree = "<group>";
@@ -121,6 +128,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3FB85D6A252D6263AEBE284E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B8A60BA18E9F50FFD9AD887 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE38A1FF7781BA09D5A5E850 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35DC6F3C6FF7632AF8BA0E8C /* Pods.debug.xcconfig */,
+				8FBDC1C82974AEC2CF730BEC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04368C1F1ACA05CA00186214 /* Build configuration list for PBXNativeTarget "littleWeather" */;
 			buildPhases = (
+				486CFD01ECB504A5B8562E0D /* Check Pods Manifest.lock */,
 				04368BF81ACA05CA00186214 /* Sources */,
 				04368BF91ACA05CA00186214 /* Frameworks */,
 				04368BFA1ACA05CA00186214 /* Resources */,
+				90DA4B9C4E31FA56DBAEB8C5 /* Embed Pods Frameworks */,
+				BAA1434B63F6AA73768DF417 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,16 +243,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		486CFD01ECB504A5B8562E0D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90DA4B9C4E31FA56DBAEB8C5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA1434B63F6AA73768DF417 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04368BF81ACA05CA00186214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04368C041ACA05CA00186214 /* RootViewController.swift in Sources */,
-				04368C081ACA05CA00186214 /* ModelController.swift in Sources */,
-				04368C061ACA05CA00186214 /* DataViewController.swift in Sources */,
+				045AD7781AD2752700EA2E20 /* WeatherService.swift in Sources */,
 				04368C021ACA05CA00186214 /* AppDelegate.swift in Sources */,
-				045AD76E1ACA0A5A00EA2E20 /* MainTableViewCell.swift in Sources */,
+				045AD7741AD274D500EA2E20 /* MainTableViewCell.swift in Sources */,
+				045AD7761AD2750500EA2E20 /* LocationService.swift in Sources */,
+				045AD7721AD274C200EA2E20 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,21 +421,25 @@
 		};
 		04368C201ACA05CA00186214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35DC6F3C6FF7632AF8BA0E8C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = littleWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04368C211ACA05CA00186214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FBDC1C82974AEC2CF730BEC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = littleWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
