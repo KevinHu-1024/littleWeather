@@ -8,10 +8,23 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //设置两个允许
+        
+        //设置对应的位置服务
+        
+        //设置对应的天气服务
+        
+        //刷新
+        
+        //test
+        let weatherService = WeatherService()
+        weatherService.test()
 
         // Do any additional setup after loading the view.
     }
