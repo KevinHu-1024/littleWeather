@@ -23,9 +23,12 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //刷新
         
         //test
-        let weatherService = WeatherService()
-        weatherService.test()
-
+        let locationService = LocationService()
+        locationService.on()
+        println(locationService.locationInfo.latitude)
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -53,6 +56,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let WeatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+        
         return WeatherCell
 
     }

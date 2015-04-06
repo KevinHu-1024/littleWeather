@@ -19,8 +19,8 @@ class WeatherService: NSObject {
     
     func test (){
         
-        var str: String = axis ["longitude"]!
-        println( str )
+//        var str: String = axis ["longitude"]!
+//        println( str )
         
     }
 }
