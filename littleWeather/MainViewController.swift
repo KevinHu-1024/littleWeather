@@ -8,8 +8,9 @@
 
 import UIKit
 
-
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+    
+     var axis: Dictionary = [ "longitude": "0.0", "laititude": "0.0" ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,9 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //刷新
         
         //test
+       
         let weatherService = WeatherService()
+        weatherService.on()
         weatherService.test()
 
         // Do any additional setup after loading the view.
@@ -53,6 +56,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let WeatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+        WeatherCell.city?.text = axis["longitude"]
         return WeatherCell
 
     }
