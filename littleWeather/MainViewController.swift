@@ -10,6 +10,8 @@ import UIKit
 
 
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+    
+    let locationService = LocationService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //刷新
         
         //test
-        let locationService = LocationService()
+//        let locationService = LocationService()
         locationService.on()
 //        println(locationService.locationInfo.latitude)
         

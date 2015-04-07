@@ -28,7 +28,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         
         if CLLocationManager.locationServicesEnabled() {
             println("CLLocationManager.locationServicesEnabled!")
-//            var CLstatus: CLAuthorizationStatus = CLAuthorizationStatus
             switch CLLocationManager.authorizationStatus() {
             case CLAuthorizationStatus.Denied :
                 println("CLAuthorizationStatus.Denied!")
@@ -54,28 +53,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         }
     }
     
-//        if( CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Denied)){
-//            locationManager.delegate = self
-//            locationManager.distanceFilter = 200
-//            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-////        locationManager.requestWhenInUseAuthorization()
+/////        locationManager.requestWhenInUseAuthorization()
 //                    if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
 //                        println("requestAlwaysAuthorization")
 //                        self.locationManager.requestAlwaysAuthorization()
-//                        
-//                        
-//                        var str1 = toString(CLLocationManager.locationServicesEnabled())
-//                        var str2 = CLLocationManager.authorizationStatus()
-//                        switch str2 {
-//                        case CLAuthorizationStatus.NotDetermined : println("NotDetermined")
-//                        case CLAuthorizationStatus.Denied: println("Denied ")
-//                        default: println("other")
-//                        }
-////                        println(" \(str1) \(str2)")
-//                    }
-//            }else{
-//                println("ls error!")
-//            }
+//
+
+//    significantLocationChangeMonitoringAvailable() ????
 //        locationManager.requestAlwaysAuthorization()
         //locationManager.startMonitoringSignificantLocationChanges()
 
@@ -83,12 +67,12 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location : CLLocation = locations [locations.count-1] as CLLocation
         if (location.horizontalAccuracy > 0){
-//            self.locationManager.stopUpdatingLocation()
+            self.locationManager.stopUpdatingLocation()
             println(location.coordinate)
             locationInfo . longitude = toString(location.coordinate.longitude)
             locationInfo . latitude = toString(location.coordinate.latitude)
             locationInfo . status = true
-            println(self.locationInfo.latitude)
+            println(self.locationInfo.status)
         }
     }
     
@@ -105,7 +89,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
                 locationManager.distanceFilter = 200
                 locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
                 locationManager.startUpdatingLocation()
-                println("didChangeAuthorizationStatus status")
+                println("didChangeAuthorizationStatus: \(status)")
             }
         default: break
         }
