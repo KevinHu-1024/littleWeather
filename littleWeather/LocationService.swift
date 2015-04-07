@@ -12,8 +12,9 @@ import CoreLocation
 // LocationService 负责开启关闭定位，只对外输出经纬度， 只提供给WeatherService使用
 
 struct LocationInfo {
-    var longitude = "0.0"
-    var latitude = "0.0"
+    var status: Bool = false
+    var longitude = "none"
+    var latitude = "none"
 }
 
 
@@ -25,20 +26,59 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     func on ( ) {
         
-        locationManager.delegate = self
-        locationManager.distanceFilter = 200
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-//        locationManager.requestWhenInUseAuthorization()
-        if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
-            println("requestAlwaysAuthorization")
-            self.locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            println("CLLocationManager.locationServicesEnabled!")
+//            var CLstatus: CLAuthorizationStatus = CLAuthorizationStatus
+            switch CLLocationManager.authorizationStatus() {
+            case CLAuthorizationStatus.Denied :
+                println("CLAuthorizationStatus.Denied!")
+                
+            case CLAuthorizationStatus.NotDetermined : println("CLAuthorizationStatus.NotDetermined!")
+                if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
+                    self.locationManager.requestAlwaysAuthorization()
+                    println("Requesting Always Authorization!")
+                    locationManager.delegate = self
+                    locationManager.distanceFilter = 200
+                    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+                    locationManager.startUpdatingLocation()
+                    }
+            default:
+                println("OK!")
+                locationManager.delegate = self
+                locationManager.distanceFilter = 200
+                locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+                locationManager.startUpdatingLocation()
+            }
+        } else {
+            println("CLLocationManager.locationServicesError!")
         }
-//        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.startUpdatingLocation()
-        
     }
     
-    
+//        if( CLLocationManager.locationServicesEnabled() && (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Denied)){
+//            locationManager.delegate = self
+//            locationManager.distanceFilter = 200
+//            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+////        locationManager.requestWhenInUseAuthorization()
+//                    if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
+//                        println("requestAlwaysAuthorization")
+//                        self.locationManager.requestAlwaysAuthorization()
+//                        
+//                        
+//                        var str1 = toString(CLLocationManager.locationServicesEnabled())
+//                        var str2 = CLLocationManager.authorizationStatus()
+//                        switch str2 {
+//                        case CLAuthorizationStatus.NotDetermined : println("NotDetermined")
+//                        case CLAuthorizationStatus.Denied: println("Denied ")
+//                        default: println("other")
+//                        }
+////                        println(" \(str1) \(str2)")
+//                    }
+//            }else{
+//                println("ls error!")
+//            }
+//        locationManager.requestAlwaysAuthorization()
+        //locationManager.startMonitoringSignificantLocationChanges()
+
     //MARK: - CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location : CLLocation = locations [locations.count-1] as CLLocation
@@ -47,7 +87,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
             println(location.coordinate)
             locationInfo . longitude = toString(location.coordinate.longitude)
             locationInfo . latitude = toString(location.coordinate.latitude)
-            println("updated!")
+            locationInfo . status = true
+            println(self.locationInfo.latitude)
         }
     }
     
@@ -56,10 +97,15 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        switch (status) {
+        switch status {
         case CLAuthorizationStatus.NotDetermined :
             if ( self.locationManager .respondsToSelector("requestAlwaysAuthorization")) {
                 self.locationManager.requestAlwaysAuthorization()
+                locationManager.delegate = self
+                locationManager.distanceFilter = 200
+                locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+                locationManager.startUpdatingLocation()
+                println("didChangeAuthorizationStatus status")
             }
         default: break
         }

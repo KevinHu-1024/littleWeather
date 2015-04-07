@@ -25,7 +25,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //test
         let locationService = LocationService()
         locationService.on()
-        println(locationService.locationInfo.latitude)
+//        println(locationService.locationInfo.latitude)
         
         
         
