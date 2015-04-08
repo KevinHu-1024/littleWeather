@@ -8,10 +8,10 @@
 
 import UIKit
 
+let weatherService = WeatherService()
 
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
-    let locationService = LocationService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,8 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         //test
 //        let locationService = LocationService()
-        locationService.on()
 //        println(locationService.locationInfo.latitude)
-        
+        weatherService.test()
         
         
         // Do any additional setup after loading the view.
