@@ -19,17 +19,21 @@ struct WeatherInfo {
     var temp: String
 }
 
+
 class WeatherService: NSObject {
     
-//    let locationService = LocationService()
-    let locationService = LocationService() //以后要只放在天气服务中
+    let locationService = LocationService()
 
+    let ak = "rnvGvlrTOvCO8Sbcvj4UGa66"
+    let mcode = "com.example.littleWeather"
     
     func test (){
         locationService.on()
-
-//        var str: String = axis ["longitude"]!
-//        println( str )
-        
+        if (locationService.locationInfo.status) {
+            var urlA = "http://api.map.baidu.com/telematics/v3/weather?location= \(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
+            println("url = \(urlA)")
+        }else{
+            println("Waiting...")
+        }
     }
 }

@@ -13,14 +13,23 @@ import CoreLocation
 
 struct LocationInfo {
     var status: Bool = false
-    var longitude = "none"
-    var latitude = "none"
+    var longitude = ""
+    var latitude = ""
+    init() {
+        latitude = "116.403874"
+        longitude = "39.913561"
+    }
 }
 
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    
+//    init(locationManager:CLLocationManager , locationInfo:LocationInfo ) {
+//        self.locationManager = CLLocationManager()
+//        self.locationInfo = LocationInfo()
+//    }
     
     var locationInfo = LocationInfo()
     
@@ -90,6 +99,8 @@ class LocationService: NSObject, CLLocationManagerDelegate {
                 locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
                 locationManager.startUpdatingLocation()
                 println("didChangeAuthorizationStatus: \(status)")
+                println("longitude = \(locationInfo.longitude)")
+                println("laititude = \(locationInfo.latitude)")
             }
         default: break
         }
