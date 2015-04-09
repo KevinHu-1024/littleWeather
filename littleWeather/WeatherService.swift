@@ -32,6 +32,7 @@ class WeatherService: NSObject {
         if (locationService.locationInfo.status) {
             var urlA = "http://api.map.baidu.com/telematics/v3/weather?location= \(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
             println("url = \(urlA)")
+            locationService.locationInfo.status = false
         }else{
             println("Waiting...")
         }

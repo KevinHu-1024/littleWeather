@@ -27,7 +27,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //test
 //        let locationService = LocationService()
 //        println(locationService.locationInfo.latitude)
-        weatherService.test()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: "locationInfoUpdated", object: nil)
         
         
         // Do any additional setup after loading the view.
@@ -36,6 +36,12 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func update(title:NSNotification){
+        
+                weatherService.test()
+
     }
     
 
