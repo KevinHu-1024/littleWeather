@@ -76,7 +76,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location : CLLocation = locations [locations.count-1] as CLLocation
         if (location.horizontalAccuracy > 0){
-//            self.locationManager.stopUpdatingLocation()
+            self.locationManager.stopUpdatingLocation()
             println(location.coordinate)
             locationInfo . longitude = toString(location.coordinate.longitude)
             locationInfo . latitude = toString(location.coordinate.latitude)
