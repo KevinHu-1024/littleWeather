@@ -42,7 +42,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func update(NSNotification){
         
                 weatherService.test()
-        println("Noti!")
+        println("returnToMain!")
 
     }
     

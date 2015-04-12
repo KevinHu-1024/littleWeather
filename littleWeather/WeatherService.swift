@@ -17,6 +17,12 @@ struct WeatherInfo {
     var cityID: String
     var  weather: String
     var temp: String
+    init(){
+        city = "none"
+        cityID = "none"
+        weather = ""
+        temp = ""
+    }
 }
 
 
@@ -28,6 +34,10 @@ class WeatherService: NSObject {
     let ak = "rnvGvlrTOvCO8Sbcvj4UGa66"
     let mcode = "com.example.littleWeather"
     
+    var weatherInfo = WeatherInfo()
+//    var json:
+//    var buffer = [ String:String]()
+    
     // MARK: - 测试传值
     func test (){
         locationService.on()
@@ -37,15 +47,38 @@ class WeatherService: NSObject {
             locationService.locationInfo.status = false
    // MARK: - 网络请求
             Alamofire.request(.GET, urlA)
-                .responseJSON { (_, _, JSON, _) in
-                    println(JSON!)
+                .responseJSON { (_, _, getJSON, _) in
+                    println(getJSON!)
+//                    var json = JSON( getJSON! )
+//                    self.weatherInfo.city = json["error"].stringValue
+                    self.updatejson(getJSON as NSDictionary!)
             }
     // MARK: -解析JSON
-            
-            
+            println(weatherInfo.city)
             
         }else{
             println("Waiting...")
         }
+    }
+    
+    func updatejson (jsonResult: NSDictionary!){
+        
+        if let city = jsonResult ["date"]? as? String{
+            weatherInfo.city = city
+        }else{
+            weatherInfo.city = "unknown"
+        }
+        println(weatherInfo.city)
+//        if let weather = jsonResult ["weatherinfo"]?["weather2"]? as? String{
+//            todayWeather.text = weather
+//        }else{
+//            todayWeather.text = "unknown"
+//        }
+//        if let city = jsonResult ["weatherinfo"]?["city"]? as? String{
+//            cityName.text = city
+//        }else{
+//            cityName.text = "unknown"
+//        }
+        
     }
 }

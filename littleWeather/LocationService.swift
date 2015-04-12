@@ -82,6 +82,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
             locationInfo . latitude = toString(location.coordinate.latitude)
             locationInfo . status = true
             println(self.locationInfo.status)
+            println("locationInfoUpdated!")
             NSNotificationCenter.defaultCenter().postNotificationName("locationInfoUpdated", object: nil)
         }
     }
