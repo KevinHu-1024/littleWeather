@@ -49,10 +49,10 @@ class WeatherService: NSObject {
 //                        println(getJSON!)
                         var json = JSON(getJSON!)
                         self.weatherInfo.city = json["results"][0]["currentCity"].stringValue
-//                        self.weatherInfo.weather = json["results"][0]["currentCity"].stringValue
+                        self.weatherInfo.weather = json["results"][0]["weather_data"][1]["weather"].stringValue
                         self.weatherInfo.temp = json["results"][0]["weather_data"][1]["temperature"].stringValue
 //                        println(json["results"][0]["weather_data"][1])
-                        println(self.weatherInfo.temp)
+                        println(json["results"][0]["weather_data"][1]["date"])
                     }else{
                         println("No Json Data!")
                     }

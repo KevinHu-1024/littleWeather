@@ -11,16 +11,11 @@ import UIKit
 
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var tbv: UITableView?
     let weatherService = WeatherService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //设置两个允许
-        //设置对应的位置服务
-        //设置对应的天气服务
-        //刷新
-        //test
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
         weatherService.test()
     }
@@ -31,10 +26,9 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func update(NSNotification){
-        
         weatherService.test()
         println("returnToMain!")
-
+        tbv?.reloadData()
     }
     
 
@@ -55,9 +49,13 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let WeatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+        let weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
         
-        return WeatherCell
+        weatherCell.city?.text = weatherService.weatherInfo.city
+        weatherCell.temp?.text = weatherService.weatherInfo.temp
+        weatherCell.weather?.text = weatherService.weatherInfo.weather
+        
+        return weatherCell
 
     }
     
