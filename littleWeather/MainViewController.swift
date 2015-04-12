@@ -8,30 +8,21 @@
 
 import UIKit
 
-let weatherService = WeatherService()
 
 class MainViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    let weatherService = WeatherService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //设置两个允许
-        
         //设置对应的位置服务
-        
         //设置对应的天气服务
-        
         //刷新
-        
         //test
-//        let locationService = LocationService()
-//        println(locationService.locationInfo.latitude)
-        weatherService.test()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
-        
-        
-        // Do any additional setup after loading the view.
+        weatherService.test()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +32,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func update(NSNotification){
         
-                weatherService.test()
+        weatherService.test()
         println("returnToMain!")
 
     }

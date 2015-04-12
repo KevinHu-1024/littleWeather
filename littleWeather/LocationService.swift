@@ -25,12 +25,6 @@ struct LocationInfo {
 class LocationService: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-    
-//    init(locationManager:CLLocationManager , locationInfo:LocationInfo ) {
-//        self.locationManager = CLLocationManager()
-//        self.locationInfo = LocationInfo()
-//    }
-    
     var locationInfo = LocationInfo()
     
     func on ( ) {
@@ -62,15 +56,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         }
     }
     
-/////        locationManager.requestWhenInUseAuthorization()
-//                    if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
-//                        println("requestAlwaysAuthorization")
-//                        self.locationManager.requestAlwaysAuthorization()
-//
-
-//    significantLocationChangeMonitoringAvailable() ????
-//        locationManager.requestAlwaysAuthorization()
-        //locationManager.startMonitoringSignificantLocationChanges()
 
     //MARK: - CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

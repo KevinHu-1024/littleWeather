@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0419CC321ADAB0CE004A5B67 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		04368BFC1ACA05CA00186214 /* littleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = littleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04368C001ACA05CA00186214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04368C011ACA05CA00186214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 				04368C0E1ACA05CA00186214 /* LaunchScreen.xib */,
 				04368C0C1ACA05CA00186214 /* Images.xcassets */,
 				04368BFF1ACA05CA00186214 /* Supporting Files */,
+				0419CC321ADAB0CE004A5B67 /* Location.gpx */,
 			);
 			path = littleWeather;
 			sourceTree = "<group>";
