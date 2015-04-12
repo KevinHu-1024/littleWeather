@@ -23,16 +23,27 @@ struct WeatherInfo {
 class WeatherService: NSObject {
     
     let locationService = LocationService()
+    
 
     let ak = "rnvGvlrTOvCO8Sbcvj4UGa66"
     let mcode = "com.example.littleWeather"
     
+    // MARK: - 测试传值
     func test (){
         locationService.on()
         if (locationService.locationInfo.status) {
-            var urlA = "http://api.map.baidu.com/telematics/v3/weather?location= \(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
+            var urlA = "http://api.map.baidu.com/telematics/v3/weather?location=\(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
             println("url = \(urlA)")
             locationService.locationInfo.status = false
+   // MARK: - 网络请求
+            Alamofire.request(.GET, urlA)
+                .responseJSON { (_, _, JSON, _) in
+                    println(JSON!)
+            }
+    // MARK: -解析JSON
+            
+            
+            
         }else{
             println("Waiting...")
         }
