@@ -31,6 +31,12 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         tbv?.reloadData()
     }
     
+    @IBAction func refreash(){
+        weatherService.test()
+        println("F5")
+        tbv?.reloadData()
+    }
+    
 
     // MARK: - TableViewDataSource
     
@@ -49,13 +55,32 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
-        
-        weatherCell.city?.text = weatherService.weatherInfo.city
-        weatherCell.temp?.text = weatherService.weatherInfo.temp
-        weatherCell.weather?.text = weatherService.weatherInfo.weather
-        
-        return weatherCell
+        switch indexPath.row {
+        case 0:
+            var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+            weatherCell.city?.text = weatherService.weatherInfo.city
+            weatherCell.temp?.text = weatherService.weatherInfo.temp
+            weatherCell.weather?.text = weatherService.weatherInfo.weather
+            weatherCell.day?.text = weatherService.weatherInfo.day + "(明天)"
+            return weatherCell
+            
+        case 1:
+            var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+            weatherCell.city?.text = weatherService.weatherInfo2.city
+            weatherCell.temp?.text = weatherService.weatherInfo2.temp
+            weatherCell.weather?.text = weatherService.weatherInfo2.weather
+            weatherCell.day?.text = weatherService.weatherInfo2.day + "(后天)"
+            return weatherCell
+
+        default:
+            var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+            weatherCell.city?.text = "noData"
+            weatherCell.temp?.text = "noData"
+            weatherCell.weather?.text = "noData"
+            weatherService.test()
+            return weatherCell
+        }
+
 
     }
     

@@ -18,11 +18,13 @@ struct WeatherInfo {
 //    var cityID: String
     var  weather: String
     var temp: String
+    var day: String
     init(){
         city = "none"
 //        cityID = "none"
         weather = ""
         temp = ""
+        day = ""
     }
 }
 
@@ -35,6 +37,7 @@ class WeatherService: NSObject {
     let mcode = "com.example.littleWeather"
     
     var weatherInfo = WeatherInfo()
+    var weatherInfo2 = WeatherInfo()
     
     // MARK: - 测试传值
     func test (){
@@ -47,12 +50,19 @@ class WeatherService: NSObject {
                 .responseJSON { (_, _, getJSON, _) in
                     if ((getJSON) != nil){
 //                        println(getJSON!)
+                //row1
                         var json = JSON(getJSON!)
                         self.weatherInfo.city = json["results"][0]["currentCity"].stringValue
                         self.weatherInfo.weather = json["results"][0]["weather_data"][1]["weather"].stringValue
                         self.weatherInfo.temp = json["results"][0]["weather_data"][1]["temperature"].stringValue
+                        self.weatherInfo.day = json["results"][0]["weather_data"][1]["date"].stringValue
 //                        println(json["results"][0]["weather_data"][1])
                         println(json["results"][0]["weather_data"][1]["date"])
+                //row2
+                        self.weatherInfo2.city = json["results"][0]["currentCity"].stringValue
+                        self.weatherInfo2.weather = json["results"][0]["weather_data"][2]["weather"].stringValue
+                        self.weatherInfo2.temp = json["results"][0]["weather_data"][2]["temperature"].stringValue
+                        self.weatherInfo2.day = json["results"][0]["weather_data"][2]["date"].stringValue
                     }else{
                         println("No Json Data!")
                     }
