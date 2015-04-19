@@ -32,30 +32,29 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             println("CLLocationManager.locationServicesEnabled!")
             switch CLLocationManager.authorizationStatus() {
-            case CLAuthorizationStatus.Denied :
-                println("CLAuthorizationStatus.Denied!")
+                case CLAuthorizationStatus.Denied :
+                    println("CLAuthorizationStatus.Denied!")
                 
-            case CLAuthorizationStatus.NotDetermined : println("CLAuthorizationStatus.NotDetermined!")
-                if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
-                    self.locationManager.requestAlwaysAuthorization()
-                    println("Requesting Always Authorization!")
+                case CLAuthorizationStatus.NotDetermined : println("CLAuthorizationStatus.NotDetermined!")
+                    if self.locationManager.respondsToSelector("requestAlwaysAuthorization") {
+                        self.locationManager.requestAlwaysAuthorization()
+                        println("Requesting Always Authorization!")
+                        locationManager.delegate = self
+                        locationManager.distanceFilter = 200
+                        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+                        locationManager.startUpdatingLocation()
+                    }
+                default:
+                    println("OK!")
                     locationManager.delegate = self
                     locationManager.distanceFilter = 200
                     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
                     locationManager.startUpdatingLocation()
-                    }
-            default:
-                println("OK!")
-                locationManager.delegate = self
-                locationManager.distanceFilter = 200
-                locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-                locationManager.startUpdatingLocation()
             }
         } else {
             println("CLLocationManager.locationServicesError!")
         }
     }
-    
 
     //MARK: - CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
