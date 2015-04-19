@@ -43,6 +43,7 @@ class WeatherService: NSObject {
             var urlA = "http://api.map.baidu.com/telematics/v3/weather?location=\(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
             println("url = \(urlA)")
             locationService.locationInfo.status = false
+            println("false")
             Alamofire.request(.GET, urlA)
                 .responseJSON { (_, _, getJSON, _) in
                     if ((getJSON) != nil){

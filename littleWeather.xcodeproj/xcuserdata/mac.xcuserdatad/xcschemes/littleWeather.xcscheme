@@ -85,8 +85,8 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "Hong Kong, China"
-         referenceType = "1">
+         identifier = "../littleWeather/Location.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
