@@ -19,6 +19,11 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         weatherService.test()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
     }
+    
+    override func  viewWillAppear(animated: Bool) {
+        weatherService.test()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
