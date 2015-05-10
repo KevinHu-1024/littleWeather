@@ -52,19 +52,18 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //对String提取最后一个字
         //对最后一个字进行swich，每种状况设置一个颜色，然后break，外面返回cellColor
         var cellColor = UIColor(red: 20/255, green: 200/255, blue: 180/255, alpha: 1)
-//        println("weather = \(weather), endIndexIs = \(weather[weather.endIndex.predecessor()])")
         if weather.isEmpty {
             println("cellIsEmpty")
         }else{
         switch weather[weather.endIndex.predecessor()] {
         case "晴":
-            cellColor = UIColor(red: 1, green: 200/255, blue: 180/255, alpha: 1)
+            cellColor = UIColor(red: 180/255, green: 210/255, blue: 125/255, alpha: 1)
         case "云":
-                cellColor = UIColor(red: 60/255, green: 100/255, blue: 100/255, alpha: 1)
+            cellColor = UIColor(red: 100/255, green: 150/255, blue: 200/255, alpha: 1)
         case "霾":
-                cellColor = UIColor(red: 30/255, green: 200/255, blue: 180/255, alpha: 1)
+            cellColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
         case "雨":
-            cellColor = UIColor(red: 0, green: 215/255, blue: 255/255, alpha: 1)
+            cellColor = UIColor(red: 40/255, green: 80/255, blue: 170/255, alpha: 1)
         default:
             cellColor = UIColor(red: 20/255, green: 200/255, blue: 180/255, alpha: 1)
         }
