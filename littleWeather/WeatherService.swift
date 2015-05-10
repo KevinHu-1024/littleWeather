@@ -18,9 +18,9 @@ struct WeatherInfo {
     var temp: String
     var day: String
     init(){
-        city = "..."
-        weather = "..."
-        temp = "..."
+        city = ""
+        weather = ""
+        temp = "加载中..."
         day = ""
     }
 }
@@ -39,7 +39,6 @@ class WeatherService: NSObject {
     
     // MARK: - 测试传值
     func test (){
-        //locationService.on()
         if (locationService.locationInfo.status) {
             var urlA = "http://api.map.baidu.com/telematics/v3/weather?location=\(locationService.locationInfo.longitude),\(locationService.locationInfo.latitude)&output=json&ak=\(ak)&mcode=\(mcode)"
             println("url = \(urlA)")
@@ -56,14 +55,14 @@ class WeatherService: NSObject {
                         //self.weatherInfo.day = json["results"][0]["weather_data"][0]["date"].stringValue
                         self.weatherInfoNow.day = "今"
                 //row2
-                        self.weatherInfo.city = json["results"][0]["currentCity"].stringValue
+//                        self.weatherInfo.city = json["results"][0]["currentCity"].stringValue
                         self.weatherInfo.weather = json["results"][0]["weather_data"][1]["weather"].stringValue
                         self.weatherInfo.temp = json["results"][0]["weather_data"][1]["temperature"].stringValue
                         //self.weatherInfo.day = json["results"][0]["weather_data"][1]["date"].stringValue
                         self.weatherInfo.day = "明"
                         println(json["results"][0]["weather_data"][1]["date"])
                 //row3
-                        self.weatherInfo2.city = json["results"][0]["currentCity"].stringValue
+//                        self.weatherInfo2.city = json["results"][0]["currentCity"].stringValue
                         self.weatherInfo2.weather = json["results"][0]["weather_data"][2]["weather"].stringValue
                         self.weatherInfo2.temp = json["results"][0]["weather_data"][2]["temperature"].stringValue
                         //self.weatherInfo2.day = json["results"][0]["weather_data"][2]["date"].stringValue
