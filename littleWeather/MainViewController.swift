@@ -16,13 +16,17 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherService.test()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
+       weatherService.locationService.on()
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update2:", name: "infoUpdated", object: nil)
     }
     
     override func  viewWillAppear(animated: Bool) {
-        weatherService.test()
+        weatherService.locationService.on()
+        println("viewWillAppear")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "update:", name: "locationInfoUpdated", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update2:", name: "infoUpdated", object: nil)
+        tbv?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,11 +36,16 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func update(NSNotification){
         weatherService.test()
         println("returnToMain!")
-        tbv?.reloadData()
     }
     
+    func update2(NSNotification){
+        println("infoUpdated!")
+        tbv?.reloadData()
+    }
+
+    
     @IBAction func refreash(){
-        weatherService.test()
+        weatherService.locationService.on()
         println("F5")
         tbv?.reloadData()
     }
@@ -53,7 +62,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2
+        return 3
     }
     
     
@@ -62,18 +71,26 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
         switch indexPath.row {
         case 0:
             var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
-            weatherCell.city?.text = weatherService.weatherInfo.city
-            weatherCell.temp?.text = weatherService.weatherInfo.temp
-            weatherCell.weather?.text = weatherService.weatherInfo.weather
-            weatherCell.day?.text = weatherService.weatherInfo.day + "(明天)"
+            weatherCell.city?.text = weatherService.weatherInfoNow.city
+            weatherCell.temp?.text = weatherService.weatherInfoNow.temp
+            weatherCell.weather?.text = weatherService.weatherInfoNow.weather
+            weatherCell.day?.text = weatherService.weatherInfoNow.day
             return weatherCell
             
         case 1:
             var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
+            weatherCell.city?.text = weatherService.weatherInfo.city
+            weatherCell.temp?.text = weatherService.weatherInfo.temp
+            weatherCell.weather?.text = weatherService.weatherInfo.weather
+            weatherCell.day?.text = weatherService.weatherInfo.day
+            return weatherCell
+            
+        case 2:
+            var weatherCell = tableView.dequeueReusableCellWithIdentifier("WeatherCell", forIndexPath: indexPath) as MainTableViewCell
             weatherCell.city?.text = weatherService.weatherInfo2.city
             weatherCell.temp?.text = weatherService.weatherInfo2.temp
             weatherCell.weather?.text = weatherService.weatherInfo2.weather
-            weatherCell.day?.text = weatherService.weatherInfo2.day + "(后天)"
+            weatherCell.day?.text = weatherService.weatherInfo2.day
             return weatherCell
 
         default:
@@ -90,7 +107,7 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView( tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 230
+        return 170
         
     }
 
