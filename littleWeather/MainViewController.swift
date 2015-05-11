@@ -134,7 +134,15 @@ class MainViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView( tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 170
+        var rect_screen = UIScreen.mainScreen().bounds.size
+        
+        println("rect_screen = \(rect_screen.height)")
+        
+        var cellHeight = (rect_screen.height - 58)/3
+        
+        println("cellHeight = \(cellHeight)")
+        
+        return cellHeight
         
     }
 
