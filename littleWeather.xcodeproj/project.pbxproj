@@ -98,15 +98,15 @@
 				04368C011ACA05CA00186214 /* AppDelegate.swift */,
 				045AD7711AD274C200EA2E20 /* MainViewController.swift */,
 				045AD7731AD274D500EA2E20 /* MainTableViewCell.swift */,
+				04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */,
 				045AD7771AD2752700EA2E20 /* WeatherService.swift */,
 				045AD7751AD2750500EA2E20 /* LocationService.swift */,
+				04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */,
 				04368C091ACA05CA00186214 /* Main.storyboard */,
 				04368C0E1ACA05CA00186214 /* LaunchScreen.xib */,
-				04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */,
 				04368C0C1ACA05CA00186214 /* Images.xcassets */,
 				04368BFF1ACA05CA00186214 /* Supporting Files */,
 				0419CC321ADAB0CE004A5B67 /* Location.gpx */,
-				04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */,
 			);
 			path = littleWeather;
 			sourceTree = "<group>";
