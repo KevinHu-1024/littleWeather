@@ -17,6 +17,7 @@
 		045AD7761AD2750500EA2E20 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7751AD2750500EA2E20 /* LocationService.swift */; };
 		045AD7781AD2752700EA2E20 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7771AD2752700EA2E20 /* WeatherService.swift */; };
 		04A4BDA51B00D2A300FFC617 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */; };
+		04A4BDA71B00E60A00FFC617 /* UITableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */; };
 		16A9BCE434D0D36535783B6B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8A60BA18E9F50FFD9AD887 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		045AD7751AD2750500EA2E20 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		045AD7771AD2752700EA2E20 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExt.swift; sourceTree = "<group>"; };
 		35DC6F3C6FF7632AF8BA0E8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4B8A60BA18E9F50FFD9AD887 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBDC1C82974AEC2CF730BEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,10 +102,11 @@
 				045AD7751AD2750500EA2E20 /* LocationService.swift */,
 				04368C091ACA05CA00186214 /* Main.storyboard */,
 				04368C0E1ACA05CA00186214 /* LaunchScreen.xib */,
+				04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */,
 				04368C0C1ACA05CA00186214 /* Images.xcassets */,
 				04368BFF1ACA05CA00186214 /* Supporting Files */,
 				0419CC321ADAB0CE004A5B67 /* Location.gpx */,
-				04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */,
+				04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */,
 			);
 			path = littleWeather;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				04A4BDA51B00D2A300FFC617 /* UIColorExt.swift in Sources */,
 				04368C021ACA05CA00186214 /* AppDelegate.swift in Sources */,
 				045AD7741AD274D500EA2E20 /* MainTableViewCell.swift in Sources */,
+				04A4BDA71B00E60A00FFC617 /* UITableViewCellExt.swift in Sources */,
 				045AD7761AD2750500EA2E20 /* LocationService.swift in Sources */,
 				045AD7721AD274C200EA2E20 /* MainViewController.swift in Sources */,
 			);
