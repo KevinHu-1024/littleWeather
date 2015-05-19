@@ -18,6 +18,8 @@
 		045AD7781AD2752700EA2E20 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045AD7771AD2752700EA2E20 /* WeatherService.swift */; };
 		04A4BDA51B00D2A300FFC617 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */; };
 		04A4BDA71B00E60A00FFC617 /* UITableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */; };
+		04A4BDA91B0B6B3F00FFC617 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 04A4BDA81B0B6B3F00FFC617 /* README.md */; };
+		04A4BDAB1B0B6B4700FFC617 /* img.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 04A4BDAA1B0B6B4700FFC617 /* img.tiff */; };
 		16A9BCE434D0D36535783B6B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8A60BA18E9F50FFD9AD887 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		045AD7771AD2752700EA2E20 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		04A4BDA41B00D2A300FFC617 /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		04A4BDA61B00E60A00FFC617 /* UITableViewCellExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExt.swift; sourceTree = "<group>"; };
+		04A4BDA81B0B6B3F00FFC617 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		04A4BDAA1B0B6B4700FFC617 /* img.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = img.tiff; sourceTree = "<group>"; };
 		35DC6F3C6FF7632AF8BA0E8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4B8A60BA18E9F50FFD9AD887 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBDC1C82974AEC2CF730BEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		04368BF31ACA05CA00186214 = {
 			isa = PBXGroup;
 			children = (
+				04A4BDAA1B0B6B4700FFC617 /* img.tiff */,
+				04A4BDA81B0B6B3F00FFC617 /* README.md */,
 				04368BFE1ACA05CA00186214 /* littleWeather */,
 				04368C181ACA05CA00186214 /* littleWeatherTests */,
 				04368BFD1ACA05CA00186214 /* Products */,
@@ -236,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A4BDAB1B0B6B4700FFC617 /* img.tiff in Resources */,
 				04368C0B1ACA05CA00186214 /* Main.storyboard in Resources */,
 				04368C101ACA05CA00186214 /* LaunchScreen.xib in Resources */,
 				04368C0D1ACA05CA00186214 /* Images.xcassets in Resources */,
@@ -310,6 +317,7 @@
 				045AD7741AD274D500EA2E20 /* MainTableViewCell.swift in Sources */,
 				04A4BDA71B00E60A00FFC617 /* UITableViewCellExt.swift in Sources */,
 				045AD7761AD2750500EA2E20 /* LocationService.swift in Sources */,
+				04A4BDA91B0B6B3F00FFC617 /* README.md in Sources */,
 				045AD7721AD274C200EA2E20 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
