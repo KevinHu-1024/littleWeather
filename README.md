@@ -9,7 +9,7 @@ Swift语言实现的天气软件
 使用了百度的天气API，需要在[天气服务代码](https://github.com/darknighten/littleWeather/blob/master/littleWeather/WeatherService.swift) 中的let ak = " "填写申请到的ak，ak需要到『天气API』网页自行申请
 
 ##Screenshots:
-![主界面](https://github.com/darknighten/littleWeather/blob/master/img.tiff)
+![主界面](https://github.com/darknighten/littleWeather/blob/master/img.jpg)
 
 
 ## Used features
